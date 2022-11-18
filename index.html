@@ -27,17 +27,21 @@
 </head>
 
 <body>
-    <div class="container" id="app">
-        <h1>{{bienvenida}}</h1>
+    <div class="container text-center" id="app"> <!-- este div contiene toda la app -->
+        <h1 class="text-center">{{bienvenida}}</h1> <!-- titulo -->
         <!-- card -->
-        <div class="card" style="width: 18rem;">
-            <img :src="carta.imagen" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">{{carta.titulo}}</h5>
-                <p class="card-text">{{carta.descripcion}}</p>
-                <a href="#" class="btn btn-primary" @click="mostrarPrecio()">{{carta.textoboton}}</a>
+        <div class="card" style="width: 25rem; margin: 0 auto;"> <!-- este div tiene toda la carta -->
+            <img :src="carta.imagen" class="card-img-top" alt="zelda"> <!-- le paso la imagen anteponiedo : a src -->
+            <div class="card-body ">
+                <h5 class="card-title text-center">{{carta.titulo}}</h5> <!-- le agrego el titulo entre llaves -->
+                <p class="corazones text-center text-xl-left">❤️{{corazon}}</p> <!-- muestro la variable corazon entre llaves -->
+                <div class="text-center"> <!-- div que contiene los dos botones par apoder centrarlos -->
+                    <button type="button" class="btn btn-outline-success " @click="mas()">➕ </button> <!-- llama a la funcion mas -->
+                    <button type="button" class="btn btn-outline-danger " @click="menos()">➖</button><!-- llama a la funcion menos -->
+                </div>
             </div>
         </div>
+        <!-- card -->
     </div>
     
     <!-- javascrip bootstrap -->
