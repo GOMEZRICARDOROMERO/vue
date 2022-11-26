@@ -22,25 +22,26 @@
     <!-- Css -->
     
     <!-- JS -->
-    <script defer src="static/components/entregabledos-componente.js"></script> <!-- llamo al componente siempre antes del app -->
-    <script defer src="static/js/main.js"></script><!-- con defer hago que se ejecute al final-->
+    <script defer src="../js/desafiouno.js"></script><!-- con defer hago que se ejecute al final-->
     <!-- JS -->
 </head>
 
 <body>
     <div class="container text-center" id="app"> <!-- este div contiene toda la app -->
         <h1 class="text-center">{{bienvenida}}</h1> <!-- titulo -->
-        <!-- componentes -->
-        <br>
-        <div class="tablas">
-            <h2 class="text-center">{{lomitos}}</h2>
-            <entregabledos-componente :arraycompo="arraylomitos" :colorcompo="coloruno"> </entregabledos-componente> <!-- le paso el nombre del prop + el valor que quiero que tome -->
-            <h2 class="text-center">{{michis}}</h2>
-            <entregabledos-componente :arraycompo="arraymichis"  :colorcompo="colordos"> </entregabledos-componente>
-            <h2 class="text-center">{{wonejos}}</h2>
-            <entregabledos-componente :arraycompo="arraywonejos" :colorcompo="colortres"> </entregabledos-componente>
+        <!-- card -->
+        <div class="card" style="width: 25rem; margin: 0 auto;"> <!-- este div tiene toda la carta -->
+            <img :src="carta.imagen" class="card-img-top" alt="zelda"> <!-- le paso la imagen anteponiedo : a src -->
+            <div class="card-body ">
+                <h5 class="card-title text-center">{{carta.titulo}}</h5> <!-- le agrego el titulo entre llaves -->
+                <p class="corazones text-center text-xl-left">❤️{{corazon}}</p> <!-- muestro la variable corazon entre llaves -->
+                <div class="text-center"> <!-- div que contiene los dos botones par apoder centrarlos -->
+                    <button type="button" class="btn btn-outline-success " @click="mas()">➕ </button> <!-- llama a la funcion mas -->
+                    <button type="button" class="btn btn-outline-danger " @click="menos()">➖</button><!-- llama a la funcion menos -->
+                </div>
+            </div>
         </div>
-        <!-- componentes -->
+        <!-- card -->
     </div>
     
     <!-- javascrip bootstrap -->
